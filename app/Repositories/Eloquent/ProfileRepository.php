@@ -2,6 +2,7 @@
 
 namespace App\Repositories\Eloquent;
 
+use App\Repositories\ProfileRepositoryInterface;
 use App\Models\Profile;
 
 class ProfileRepository implements ProfileRepositoryInterface

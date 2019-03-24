@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Profile;
 
+
 use App\Repositories\ProfileRepositoryInterface;
 
 class ProfileController extends Controller
@@ -14,7 +15,7 @@ class ProfileController extends Controller
     protected $profileRepository;
 
     public function __construct(
-        profileRepositoryInterface $profileRepository,
+        profileRepositoryInterface $profileRepository
     ) {
         $this->profileRepository = $profileRepository;
     }
@@ -22,6 +23,7 @@ class ProfileController extends Controller
     public function index()
     {
       $profiles = $this->profileRepository->getAllProfile();
+      dd($profiles);
 
       return response()->json(['profiles' => $profiles]);
     }
