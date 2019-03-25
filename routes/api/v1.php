@@ -14,7 +14,7 @@ Route::group(['prefix' => 'api', 'as' => 'api.', 'namespace' => 'Api'], function
                   Route::get('/{profile}', 'ProfileController@show')->name('show');
 
                   // Route::get('{profile}', 'ProfileController@create')->name('create')->middleware('auth');
-                  // Route::get('{profile}', 'ProfileController@update')->name('update')->middleware('auth');
+                  Route::put('/{profile}', 'ProfileController@update')->name('update')->middleware('auth');
             });
         });
 
