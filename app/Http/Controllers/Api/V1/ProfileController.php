@@ -38,7 +38,8 @@ class ProfileController extends Controller
     public function update(Profile $profile, ProfileRequest $request)
     {
 
-      $profile->fill($request->all())->update();
+      // $profile->fill($request->all())->update();
+      $profile->fill($request->all())->save();
       $profile->load('user');
 
       return response()->json(['profile' => $profile]);
